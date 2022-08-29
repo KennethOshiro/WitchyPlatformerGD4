@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/wall.wav-359ab7751473e06d67a768187275905c.sample"
+type="AudioStreamWAV"
+uid="uid://cagbtvbmyga5r"
+path="res://.godot/imported/wall.wav-359ab7751473e06d67a768187275905c.sample"
 
 [deps]
 
 source_file="res://audio/sfx/space/wall.wav"
-dest_files=[ "res://.import/wall.wav-359ab7751473e06d67a768187275905c.sample" ]
+dest_files=["res://.godot/imported/wall.wav-359ab7751473e06d67a768187275905c.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true
 edit/normalize=true
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

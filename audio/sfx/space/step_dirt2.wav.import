@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/step_dirt2.wav-ac7fdf2f42afbc138b8d9ec009dcaa84.sample"
+type="AudioStreamWAV"
+uid="uid://cro0n4rgfv3ky"
+path="res://.godot/imported/step_dirt2.wav-ac7fdf2f42afbc138b8d9ec009dcaa84.sample"
 
 [deps]
 
 source_file="res://audio/sfx/space/step_dirt2.wav"
-dest_files=[ "res://.import/step_dirt2.wav-ac7fdf2f42afbc138b8d9ec009dcaa84.sample" ]
+dest_files=["res://.godot/imported/step_dirt2.wav-ac7fdf2f42afbc138b8d9ec009dcaa84.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=true
 edit/normalize=true
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-export var max_time = 20
+@export var max_time = 20
 var cur_time = 0
 
 var player = null
@@ -8,9 +8,9 @@ var restart_point = Vector2()
 
 enum RACE_STATE { NOT_STARTED, STARTED, LOST, WON }
 var cur_race_state = RACE_STATE.NOT_STARTED
-onready var label = $Label
+@onready var label = $Label
 func _ready():
-	$Timer.connect("timeout", self, "inc_time")
+	$Timer.timeout.connect(Callable(self, "inc_time"))
 	label.hide()
 
 func start_race():

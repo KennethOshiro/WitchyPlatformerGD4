@@ -2,7 +2,7 @@ extends Node2D
 
 var player = null
 var spot_range = 70
-export var text = ""
+@export var text = ""
 
 var displaying = false
 

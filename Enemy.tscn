@@ -1,149 +1,144 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=3 uid="uid://bgfaya2h6w874"]
 
-[ext_resource path="res://Enemy.gd" type="Script" id=1]
-[ext_resource path="res://spritesheets/Witchcraft_spr_4.png" type="Texture" id=2]
-[ext_resource path="res://audio/sfx/attack.wav" type="AudioStream" id=3]
+[ext_resource type="Script" path="res://Enemy.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://hvtbhd1evr3y" path="res://spritesheets/Witchcraft_spr_4.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://8tdfq14ta0hj" path="res://audio/sfx/attack.wav" id="3"]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id="1"]
 resource_name = "attack"
 length = 0.5
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.294551, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.294551, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ 6, 7, 8, 7, 6 ]
+"values": [6, 7, 8, 7, 6]
 }
 tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.2 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "attack"
-} ]
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id="2"]
 resource_name = "fall"
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ 5 ]
+"values": [5]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id="3"]
 resource_name = "idle"
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ 0 ]
+"values": [0]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id="4"]
 resource_name = "jump"
 length = 0.2
-loop = true
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ 7, 8 ]
+"values": [7, 8]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id="5"]
 length = 0.4
-loop = true
 tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [ 1, 2, 3, 4 ]
+"values": [1, 2, 3, 4]
 }
 
-[sub_resource type="CapsuleShape2D" id=6]
-radius = 4.15455
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yva3k"]
+_data = {
+"attack": SubResource("1"),
+"fall": SubResource("2"),
+"idle": SubResource("3"),
+"jump": SubResource("4"),
+"run": SubResource("5")
+}
+
+[sub_resource type="CapsuleShape2D" id="6"]
+radius = 2.60719
 height = 5.21438
 
-[node name="Enemy" type="KinematicBody2D" groups=[
-"need_player_ref",
-]]
+[node name="Enemy" type="CharacterBody2D" groups=["need_player_ref"]]
 collision_layer = 2
-script = ExtResource( 1 )
+script = ExtResource("1")
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -8 )
-texture = ExtResource( 2 )
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("2")
 hframes = 21
 frame = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
-anims/attack = SubResource( 1 )
-anims/fall = SubResource( 2 )
-anims/idle = SubResource( 3 )
-anims/jump = SubResource( 4 )
-anims/run = SubResource( 5 )
+libraries = {
+"": SubResource("AnimationLibrary_yva3k")
+}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -6.78862 )
-shape = SubResource( 6 )
+position = Vector2(0, -6.78862)
+shape = SubResource("6")
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
-position = Vector2( 0, -6.78862 )
-enabled = true
-cast_to = Vector2( 5, 0 )
+position = Vector2(0, -6.78862)
 
 [node name="RayCastBotRight" type="RayCast2D" parent="."]
-position = Vector2( 5, -5 )
-enabled = true
-cast_to = Vector2( 0, 10 )
+position = Vector2(5, -5)
 
 [node name="RayCastBotLeft" type="RayCast2D" parent="."]
-position = Vector2( -5, -5 )
-enabled = true
-cast_to = Vector2( 0, 10 )
+position = Vector2(-5, -5)
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
-position = Vector2( 0, -6.78862 )
-enabled = true
-cast_to = Vector2( -5, 0 )
+position = Vector2(0, -6.78862)
 
 [node name="AttackSoundPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource("3")

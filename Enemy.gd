@@ -1,11 +1,11 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
 var move_speed = 20
 var player = null
 var facing_right = true
-onready var anim_player = $AnimationPlayer
-export var attack_range = 50
-export var knockback_force = 300
+@onready var anim_player = $AnimationPlayer
+@export var attack_range = 50
+@export var knockback_force = 300
 
 
 func _physics_process(delta):
@@ -46,7 +46,8 @@ func can_see_player():
 	if !is_player_in_range():
 		return
 	var space_state = get_world_2d().direct_space_state
-	var result = space_state.intersect_ray(global_position + Vector2.UP * 10, player.global_position + Vector2.UP * 10, [self], 1)
+	var result = space_state.intersect_ray(player)
+	#global_position + Vector2.UP * 10, player.global_position + Vector2.UP * 10, [self], 1)
 	if result:
 		return false
 	return true

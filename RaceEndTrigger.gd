@@ -1,7 +1,7 @@
 extends Area2D
 
 func _ready():
-	connect("body_entered", self, "end_race")
+	self.body_entered.connect(Callable(self, "end_race"))
 
 func _process(delta):
 	if RaceTimer.cur_race_state == RaceTimer.RACE_STATE.LOST:

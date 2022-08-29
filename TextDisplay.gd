@@ -1,7 +1,7 @@
 extends Label
 
 var player = null
-export var autostart = false
+@export var autostart = false
 
 func _ready():
 	start()
