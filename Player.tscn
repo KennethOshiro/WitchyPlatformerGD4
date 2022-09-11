@@ -1,10 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://be3ypba7mby3k"]
+[gd_scene load_steps=13 format=3 uid="uid://b1fa7tquvp41d"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://cocy2v0yek882" path="res://spritesheets/Witchcraft_spr_2.png" id="2"]
-[ext_resource type="AudioStream" uid="uid://bu5rqu7icgy67" path="res://audio/sfx/you_win.wav" id="3"]
-[ext_resource type="AudioStream" uid="uid://1ufuymsag1bj" path="res://audio/sfx/wall.wav" id="4"]
-[ext_resource type="AudioStream" uid="uid://bxme020q6l4i4" path="res://audio/sfx/space/step.wav" id="5"]
+[ext_resource type="Texture2D" uid="uid://tj0cqsix56tg" path="res://spritesheets/Witchcraft_spr_2.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://jfbs2e7t4nsj" path="res://audio/sfx/you_win.wav" id="3"]
+[ext_resource type="AudioStream" uid="uid://blgtsx07v0df6" path="res://audio/sfx/wall.wav" id="4"]
+[ext_resource type="AudioStream" uid="uid://ca21vdynr4j30" path="res://audio/sfx/space/step.wav" id="5"]
 
 [sub_resource type="Animation" id="5"]
 resource_name = "fall"
@@ -99,7 +99,7 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xuav5"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w2bdn"]
 _data = {
 "fall": SubResource("5"),
 "idle": SubResource("3"),
@@ -111,7 +111,7 @@ _data = {
 radius = 2.60719
 height = 5.21438
 
-[sub_resource type="ParticlesMaterial" id="6"]
+[sub_resource type="ParticleProcessMaterial" id="6"]
 spread = 180.0
 gravity = Vector3(0, 0, 0)
 
@@ -130,7 +130,7 @@ frame = 4
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
 libraries = {
-"": SubResource("AnimationLibrary_xuav5")
+"": SubResource("AnimationLibrary_w2bdn")
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

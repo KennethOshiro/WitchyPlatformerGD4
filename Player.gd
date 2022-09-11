@@ -34,8 +34,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	if being_knocked_back:
-		move_and_slide()
-		#knockback_vec, Vector2.UP)
+		move_and_slide()#knockback_vec, Vector2.UP)
 		cur_knockback_time += delta
 		if cur_knockback_time > knockback_time:
 			being_knocked_back = 0.0

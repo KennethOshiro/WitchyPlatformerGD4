@@ -47,7 +47,7 @@ func can_see_player():
 		return
 	var space_state = get_world_2d().direct_space_state
 	var result = space_state.intersect_ray(player)
-	#global_position + Vector2.UP * 10, player.global_position + Vector2.UP * 10, [self], 1)
+		#global_position + Vector2.UP * 10, player.global_position + Vector2.UP * 10, [self], 1)
 	if result:
 		return false
 	return true

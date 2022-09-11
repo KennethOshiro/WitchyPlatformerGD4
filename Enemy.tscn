@@ -1,8 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bgfaya2h6w874"]
+[gd_scene load_steps=11 format=3 uid="uid://cksksl2h7wwex"]
 
 [ext_resource type="Script" path="res://Enemy.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://hvtbhd1evr3y" path="res://spritesheets/Witchcraft_spr_4.png" id="2"]
-[ext_resource type="AudioStream" uid="uid://8tdfq14ta0hj" path="res://audio/sfx/attack.wav" id="3"]
+[ext_resource type="Texture2D" uid="uid://bnl3g24bgte8t" path="res://spritesheets/Witchcraft_spr_4.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://2pqdropnpija" path="res://audio/sfx/attack.wav" id="3"]
 
 [sub_resource type="Animation" id="1"]
 resource_name = "attack"
@@ -95,7 +95,7 @@ tracks/0/keys = {
 "values": [1, 2, 3, 4]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_yva3k"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gd7j7"]
 _data = {
 "attack": SubResource("1"),
 "fall": SubResource("2"),
@@ -121,7 +121,7 @@ frame = 8
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
 libraries = {
-"": SubResource("AnimationLibrary_yva3k")
+"": SubResource("AnimationLibrary_gd7j7")
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

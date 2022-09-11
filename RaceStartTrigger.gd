@@ -6,7 +6,8 @@ extends Area2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	self.body_entered.connect(Callable(self, "start_race"))
+	body_entered.connect(start_race)
+	#connect("body_entered", self, "start_race")
 	RaceTimer.restart_point = $RestartPoint.global_position
 
 func start_race(body):
