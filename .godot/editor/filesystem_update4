@@ -1,12 +1,2 @@
-res://Player.tscn
-res://TextDisplayBecauseGodotTextScalingSucks.tres
-res://Player.gd
-res://Enemy.tscn
-res://Enemy.gd
 res://World.tscn
-res://Sign.gd
-res://TextDisplay.gd
-res://RaceStartTrigger.gd
-res://GameEndTrigger.gd
-res://RaceTimer.gd
-res://RaceEndTrigger.gd
+res://TextDisplayBecauseGodotTextScalingSucks.tres
