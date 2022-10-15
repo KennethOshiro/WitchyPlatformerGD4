@@ -46,8 +46,8 @@ func can_see_player():
 	if !is_player_in_range():
 		return
 	var space_state = get_world_2d().direct_space_state
-	var result = space_state.intersect_ray(player)
-		#global_position + Vector2.UP * 10, player.global_position + Vector2.UP * 10, [self], 1)
+	var query = PhysicsRayQueryParameters2D.create(global_position + Vector2.UP * 10, player.global_position + Vector2.UP * 10, 1)
+	var result = space_state.intersect_ray(query)
 	if result:
 		return false
 	return true
@@ -66,5 +66,5 @@ func set_player(player_ref):
 	player = player_ref
 
 func flip():
-	$Sprite.flip_h = !$Sprite.flip_h
+	$Sprite2D.flip_h = !$Sprite2D.flip_h
 	facing_right = !facing_right

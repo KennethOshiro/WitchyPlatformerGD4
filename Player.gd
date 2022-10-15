@@ -34,7 +34,9 @@ func _process(delta):
 
 func _physics_process(delta):
 	if being_knocked_back:
-		move_and_slide()#knockback_vec, Vector2.UP)
+		set_velocity(knockback_vec)
+		set_up_direction(Vector2.UP)
+		move_and_slide()
 		cur_knockback_time += delta
 		if cur_knockback_time > knockback_time:
 			being_knocked_back = 0.0
@@ -78,8 +80,9 @@ func calc_regular_movement(delta):
 		velo.y = 10
 	
 	set_velocity(velo)
+	set_up_direction(Vector2.UP)
 	move_and_slide()
-	#velo = move_and_slide(velo, Vector2.UP)
+	velo = velocity
 	
 	if move_vec.x > 0.0 and !facing_right:
 		flip()
@@ -109,7 +112,7 @@ func get_cur_time():
 	return Time.get_ticks_msec() / 1000.0
 
 func flip():
-	$Sprite.flip_h = !$Sprite.flip_h
+	$Sprite2D.flip_h = !$Sprite2D.flip_h
 	facing_right = !facing_right
 
 func play_anim(anim):
@@ -128,7 +131,7 @@ func win():
 		return
 	$WinSoundPlayer.play()
 	won = true
-	$Sprite.texture = load("res://spritesheets/Witchcraft_spr_1.png")
+	$Sprite2D.texture = load("res://spritesheets/Witchcraft_spr_1.png")
 	$WinParticles.emitting = true
 	jump_force = 450
 	move_speed = 80

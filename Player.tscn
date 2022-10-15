@@ -1,17 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://b1fa7tquvp41d"]
+[gd_scene load_steps=13 format=3 uid="uid://brx2g62xjm6hr"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1"]
-[ext_resource type="Texture2D" uid="uid://tj0cqsix56tg" path="res://spritesheets/Witchcraft_spr_2.png" id="2"]
-[ext_resource type="AudioStream" uid="uid://jfbs2e7t4nsj" path="res://audio/sfx/you_win.wav" id="3"]
-[ext_resource type="AudioStream" uid="uid://blgtsx07v0df6" path="res://audio/sfx/wall.wav" id="4"]
-[ext_resource type="AudioStream" uid="uid://ca21vdynr4j30" path="res://audio/sfx/space/step.wav" id="5"]
+[ext_resource type="Texture2D" uid="uid://kvfksak38l48" path="res://spritesheets/Witchcraft_spr_2.png" id="2"]
+[ext_resource type="AudioStream" uid="uid://c2tgs6u7bk5xw" path="res://audio/sfx/you_win.wav" id="3"]
+[ext_resource type="AudioStream" uid="uid://rd4nfs5v5qbx" path="res://audio/sfx/wall.wav" id="4"]
+[ext_resource type="AudioStream" uid="uid://blpc5ot7xqm3y" path="res://audio/sfx/space/step.wav" id="5"]
 
 [sub_resource type="Animation" id="5"]
 resource_name = "fall"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,7 +26,7 @@ resource_name = "idle"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -42,7 +42,7 @@ length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -72,7 +72,7 @@ length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -99,7 +99,7 @@ tracks/1/keys = {
 }]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_w2bdn"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n3sq6"]
 _data = {
 "fall": SubResource("5"),
 "idle": SubResource("3"),
@@ -121,7 +121,7 @@ script = ExtResource("1")
 move_speed = 60
 jump_force = 300
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.085, -8)
 texture = ExtResource("2")
 hframes = 21
@@ -130,7 +130,7 @@ frame = 4
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "idle"
 libraries = {
-"": SubResource("AnimationLibrary_w2bdn")
+"": SubResource("AnimationLibrary_n3sq6")
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -139,7 +139,7 @@ shape = SubResource("2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
-zoom = Vector2(1.5, 1.5)
+zoom = Vector2(1.4, 1.4)
 
 [node name="JumpParticles" type="GPUParticles2D" parent="."]
 position = Vector2(5.62699, -8.52576)

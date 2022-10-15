@@ -10,7 +10,7 @@ enum RACE_STATE { NOT_STARTED, STARTED, LOST, WON }
 var cur_race_state = RACE_STATE.NOT_STARTED
 @onready var label = $Label
 func _ready():
-	$Timer.timeout.connect(inc_time)
+	$Timer.connect("timeout",Callable(self,"inc_time"))
 	label.hide()
 
 func start_race():

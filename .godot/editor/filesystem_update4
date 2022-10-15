@@ -1,2 +1,6 @@
 res://World.tscn
 res://TextDisplayBecauseGodotTextScalingSucks.tres
+res://GameEndTrigger.gd
+res://RaceEndTrigger.gd
+res://RaceStartTrigger.gd
+res://RaceTimer.gd
